@@ -1,0 +1,256 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --main-background: 240 6% 3%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  ::selection {
+    background-color: rgb(0, 112, 243);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 5px;
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  img,
+  image {
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .prose-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .prose-container pre {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .prose-container code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .card {
+    overflow: hidden;
+  }
+
+  .inner {
+    border-radius: 7px;
+    backdrop-filter: blur(80px);
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card:hover > .inner {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(80px);
+  }
+
+  .blob {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 250px;
+    width: 250px;
+    border-radius: 9999px;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(40px);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .fakeblob {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 200px;
+    width: 200px;
+    border-radius: 9999px;
+  }
+
+  .btn-primary {
+    box-shadow:
+      inset 0px 0px 8px 0px rgba(255, 255, 255, 0.28),
+      rgba(59, 130, 246, 0.5) 0px 0.48px 2.4px -0.83px,
+      rgba(59, 130, 246, 0.5) 0px 1.83px 9.15px -1.66px,
+      rgba(59, 130, 246, 0.5) 0px 8px 40px -2.5px,
+      rgba(59, 130, 246, 0.5) 0px -0.48px 2.4px -0.83px,
+      rgba(59, 130, 246, 0.5) 0px -1.83px 9.15px -1.66px,
+      rgba(59, 130, 246, 0.5) 0px -8px 40px -2.5px;
+  }
+
+  .custom-shadow {
+    box-shadow: rgba(59, 130, 246, 0.3) 5px 5px;
+  }
+
+  .flare {
+    position: fixed;
+    border-radius: 9999px;
+    z-index: 99999999;
+    backdrop-filter: blur(1px);
+    border: 2px solid #ffffff2b;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background-color: #0000005e;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    cursor: none !important;
+  }
+
+  .flare.pointer {
+    display: none;
+    opacity: 0;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    .flare {
+      display: none;
+      width: 0;
+      height: 0;
+      transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    }
+  }
+
+  .loader {
+    --uib-size: 45px;
+    --uib-color: #000;
+    --uib-speed: 1.75s;
+    position: relative;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    animation: rotate calc(var(--uib-speed) * 4) linear infinite;
+  }
+
+  .wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+  }
+
+  .float-animation {
+    animation: float 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .float2-animation {
+    animation: float2 20s cubic-bezier(0.3, 0, 0.2, 1) infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wave-animation {
+    0%, 60%, 100% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    40% {
+      transform: translateY(100px);
+    }
+  }
+
+  @keyframes float2 {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    40% {
+      transform: translateY(-100px);
+    }
+  }
+}
