@@ -60,16 +60,34 @@ const Hero = () => {
                     >
                         <div className="hidden xl:block absolute top-0 -left-1/3 overflow-visible flex-none z-[1] w-20">
                             <Image
-                                src="/images/hand.svg"
-                                alt="hand"
+                                src="/images/typescript.svg"
+                                alt="ts"
                                 width={80}
                                 height={80}
                                 className="size-full object-cover float-animation"
                             />
                         </div>
-                        <div className="hidden xl:block absolute -top-14 -right-1/3 overflow-visible flex-none z-[1] w-36">
+                        <div className="hidden xl:block absolute -top-14 -right-1/3 overflow-visible flex-none z-[1] w-24">
                             <Image
-                                src="/images/art.svg"
+                                src="/images/java.png"
+                                alt="art"
+                                width={144}
+                                height={144}
+                                className="size-full object-cover float2-animation"
+                            />
+                        </div>
+                        <div className="hidden xl:block absolute -top-2 -left-24 overflow-visible flex-none z-[1] w-24">
+                            <Image
+                                src="/images/docker.png"
+                                alt="art"
+                                width={144}
+                                height={144}
+                                className="size-full object-cover float-animation"
+                            />
+                        </div>
+                        <div className="hidden xl:block absolute -top-32 -left-1/2 overflow-visible flex-none z-[1] w-20">
+                            <Image
+                                src="/images/js.png"
                                 alt="art"
                                 width={144}
                                 height={144}
