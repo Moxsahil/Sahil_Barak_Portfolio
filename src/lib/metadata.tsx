@@ -35,8 +35,8 @@ export const generateMetadata = ({
     keywords = [
          
     ],
-    author = process.env.NEXT_PUBLIC_AUTHOR_NAME || "Shreyas Sihasane",
-    twitterHandle = "@Shreyas29",
+    author = process.env.NEXT_PUBLIC_AUTHOR_NAME || "Sahil Barak",
+    twitterHandle = "@SahilBarak20",
     type = "website",
     locale = "en_US",
     alternates = {},
@@ -46,7 +46,7 @@ export const generateMetadata = ({
     category,
     section,
 }: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://shreyas-sihasane.vercel.app");
+    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://sahil-barak.vercel.app");
 
     const imageUrl = image
         ? image.startsWith('http')
@@ -64,7 +64,7 @@ export const generateMetadata = ({
         keywords,
         authors: [{ name: author }],
         creator: author,
-        publisher: process.env.NEXT_PUBLIC_APP_NAME || "Shreyas Sihasane",
+        publisher: process.env.NEXT_PUBLIC_APP_NAME || "Sahil Barak",
         formatDetection: {
             email: false,
             address: false,
@@ -75,7 +75,7 @@ export const generateMetadata = ({
         // OpenGraph
         openGraph: {
             type,
-            siteName: process.env.NEXT_PUBLIC_APP_NAME || "Shreyas Sihasane",
+            siteName: process.env.NEXT_PUBLIC_APP_NAME || "Sahil Barak",
             title,
             description,
             ...(imageUrl && {

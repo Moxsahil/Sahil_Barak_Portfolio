@@ -1,5 +1,12 @@
+import React from 'react'
+import Wrapper from "../utils/wrapper";
 import Hero from "../contents/hero";
-import Wrapper from "../utils/wrapper"
+import AboutMe from "../contents/about-me";
+import Projects from "../contents/projects";
+import Experience from "../contents/experience";
+import MySkills from "../contents/my-skills";
+import Contact from "../contents/contact";
+import Reviews from "../contents/reviews";
 
 const HomeSection = () => {
     return (
@@ -7,8 +14,26 @@ const HomeSection = () => {
             <Wrapper className="lg:max-w-screen-lg">
                 <Hero />
             </Wrapper>
+            <Wrapper>
+                <AboutMe />
+            </Wrapper>
+            <Wrapper>
+                <Experience />
+            </Wrapper>
+            <Wrapper>
+                <Projects />
+            </Wrapper>
+            <Wrapper>
+                <MySkills />
+            </Wrapper>
+            <Wrapper>
+                <Reviews />
+            </Wrapper>
+            <Wrapper>
+                <Contact />
+            </Wrapper>
         </div>
     )
-}
+};
 
-export default HomeSection;
+export default HomeSection
