@@ -8,12 +8,12 @@ export const SKILLS = [
         stack: ["React, Next.js, React Native, Vite"]
     },
     {
-        title: "JavaScript Libraries",
+        title: "Javascript Libraries",
         stack: ["React Query, Zustand, Redux, Axios, React Hook Form"]
     },
     {
         title: "Backend Technologies",
-        stack: ["Node.js, Express.js, Prisma, "]
+        stack: ["Node.js, Express.js, Prisma"]
     },
     {
         title: "Database",
@@ -21,6 +21,6 @@ export const SKILLS = [
     },
     {
         title: "Software & Tools",
-        stack: ["VS Code, Cursor, Git, GitHub, Figma, Notion, Postman, Vercel"]
+        stack: ["VS Code, Cursor, Git, GitHub, Figma, Postman, Vercel"]
     },
 ]

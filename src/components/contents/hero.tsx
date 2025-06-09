@@ -76,7 +76,7 @@ const Hero = () => {
                                 className="size-full object-cover float2-animation"
                             />
                         </div>
-                        <div className="hidden xl:block absolute -top-2 -left-24 overflow-visible flex-none z-[1] w-24">
+                        <div className="hidden xl:block absolute -top-32 -left-8 overflow-visible flex-none z-[1] w-24">
                             <Image
                                 src="/images/docker.png"
                                 alt="art"
@@ -139,7 +139,7 @@ const Hero = () => {
                 className="relative mt-10 flex flex-col items-center justify-center"
             >
                 <Link href="#contact">
-                    <button className="relative py-3 text-[15px] tracking-wider font-medium overflow-hidden rounded-lg bg-[#3b82f6] text-white transition-all duration-300 group btn-primary flex items-center justify-center w-52 h-auto">
+                    <button className="relative py-3 text-[15px] tracking-wider font-medium overflow-hidden rounded-lg bg-[#266ee2] text-white transition-all duration-300 group btn-primary flex items-center justify-center w-52 h-auto">
                         <span className="relative z-10 font-medium font-heading">
                             Let&apos;s Work Together
                         </span>
@@ -158,7 +158,7 @@ const Hero = () => {
                     className="flex flex-col items-center justify-center my-32"
                 >
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 w-full lg:max-w-screen-md">
-                        {[25, 2, 8].map((value, index) => (
+                        {[15, 1, 3].map((value, index) => (
                             <AnimationContainer
                                 key={index}
                                 animation="scale"

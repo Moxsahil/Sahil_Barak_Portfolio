@@ -71,15 +71,19 @@
 
 @layer components {
   .prose-container {
-    @apply w-full max-w-full;
+    width: 100%;
+    max-width: 100%;
   }
 
   .prose-container pre {
-    @apply w-full max-w-full overflow-x-auto;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .prose-container code {
-    @apply whitespace-pre-wrap break-words;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 }
 
@@ -118,15 +122,7 @@ image {
   pointer-events: none;
 }
 
-a,
-button,
-input,
-textarea,
-select,
-label,
-option {
-  /* cursor: none !important; */
-}
+/* Removed empty ruleset for a, button, input, textarea, select, label, option */
 
 .flare {
   position: fixed;
