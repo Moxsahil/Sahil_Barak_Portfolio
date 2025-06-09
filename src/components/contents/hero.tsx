@@ -67,13 +67,31 @@ const Hero = () => {
                                 className="size-full object-cover float-animation"
                             />
                         </div>
-                        <div className="hidden xl:block absolute -top-14 -right-1/3 overflow-visible flex-none z-[1] w-24">
+                        <div className="hidden xl:block absolute -top-14 -right-1/3 overflow-visible flex-none z-[1] w-20">
                             <Image
                                 src="/images/java.png"
                                 alt="art"
                                 width={144}
                                 height={144}
                                 className="size-full object-cover float2-animation"
+                            />
+                        </div>
+                        <div className="hidden xl:block absolute -top-28 -right-8 overflow-visible flex-none z-[1] w-16">
+                            <Image
+                                src="/images/mysql.png"
+                                alt="art"
+                                width={144}
+                                height={144}
+                                className="size-full object-cover float-animation"
+                            />
+                        </div>
+                        <div className="hidden xl:block absolute -top-24 -right-1/2 overflow-visible flex-none z-[1] w-16">
+                            <Image
+                                src="/images/git.png"
+                                alt="art"
+                                width={144}
+                                height={144}
+                                className="size-full object-cover float-animation"
                             />
                         </div>
                         <div className="hidden xl:block absolute -top-32 -left-8 overflow-visible flex-none z-[1] w-24">

@@ -1,4 +1,4 @@
-import { getReviews } from "@/actions";
+// import { getReviews } from "@/actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import { StarIcon } from "lucide-react";
@@ -14,7 +14,7 @@ type ReviewProps = {
 
 const Reviews = async () => {
 
-    const reviews = await getReviews();
+    // const reviews = await getReviews();
 
     return (
         <div className="w-full relative pb-20 py-10 z-40">
@@ -30,7 +30,7 @@ const Reviews = async () => {
                 </div>
             </AnimationContainer>
 
-            <AnimationContainer
+            {/* <AnimationContainer
                 animation="slide-up"
                 delay={0.2}
                 className="flex items-center justify-center overflow-hidden relative w-full pt-10 mx-auto"
@@ -51,7 +51,7 @@ const Reviews = async () => {
                         <CarouselNext />
                     </div>
                 </Carousel>
-            </AnimationContainer>
+            </AnimationContainer> */}
         </div>
     )
 };

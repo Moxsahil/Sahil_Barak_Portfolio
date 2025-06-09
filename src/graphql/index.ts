@@ -33,7 +33,7 @@ export const getProjects = async () => {
                     node {
                         id
                         title
-                        view
+                        views
                         github
                         stack
                         createdAt
@@ -155,25 +155,25 @@ export const getClient = async (object: ClientProps) => {
     // return result;
 };
 
-// export const getReviewsData = async () => {
-//     const query = gql`
-//         query Reviews {
-//             reviewsConnection {
-//                 edges {
-//                     cursor
-//                     node {
-//                         id
-//                         name
-//                         text
-//                         rating
-//                         country
-//                         publishedAt
-//                     }
-//                 }
-//             }
-//         }
-//     `;
+export const getReviewsData = async () => {
+    const query = gql`
+        query Reviews {
+            reviewsConnection {
+                edges {
+                    cursor
+                    node {
+                        id
+                        name
+                        text
+                        rating
+                        country
+                        publishedAt
+                    }
+                }
+            }
+        }
+    `;
 
-//     const result: any = await request(graphqlAPI, query);
-//     return result.reviewsConnection.edges;
-// };
+    const result: any = await request(graphqlAPI, query);
+    return result.reviewsConnection.edges;
+};

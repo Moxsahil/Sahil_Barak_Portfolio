@@ -1,26 +1,26 @@
 export const SKILLS = [
     {
         title: "languages",
-        stack: ["Java, JavaScript, TypeScript"]
+        stack: ["Java", "JavaScript", "TypeScript"]
     },
     {
         title: "Frontend Frameworks",
-        stack: ["React, Next.js, React Native, Vite"]
+        stack: ["React", "Next.js", "React Native", "Vite"]
     },
     {
         title: "Javascript Libraries",
-        stack: ["React Query, Zustand, Redux, Axios, React Hook Form"]
+        stack: ["React Query", "Zustand", "Redux", "Axios", "React Hook Form"]
     },
     {
         title: "Backend Technologies",
-        stack: ["Node.js, Express.js, Prisma"]
+        stack: ["Node.js", "Express.js", "Prisma", "Drizzle"]
     },
     {
         title: "Database",
-        stack: ["MongoDB, MySQL, PostgreSQL, Convex"]
+        stack: ["MongoDB", "MySQL", "PostgreSQL", "Convex"]
     },
     {
         title: "Software & Tools",
-        stack: ["VS Code, Cursor, Git, GitHub, Figma, Postman, Vercel"]
+        stack: ["VS Code", "Cursor", "Git", "GitHub", "Figma", "Postman", "Vercel"]
     },
 ]

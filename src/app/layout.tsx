@@ -1,4 +1,3 @@
-
 import { ClientProviders } from "@/components/utils/client-providers";
 import Providers from "@/components/utils/providers";
 import { base, heading } from "@/constants/fonts";
@@ -9,37 +8,36 @@ import { ColorSchemeScript } from "@mantine/core";
 import "@mantine/core/styles.css";
 import Head from "./head";
 import Header from "@/components/navbar";
+import { Navbar } from "@/components";
 
 export const metadata = generateMetadata();
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" suppressHydrationWarning>
-            <head>
-                <ColorSchemeScript />
-                <Head />
-                <link
-                    rel="preload"
-                    href="/images/me.png"
-                    as="image"
-                />
-            </head>
-            <body className={cn(
-                "min-h-screen bg-background text-foreground antialiased font-heading relative",
-                heading.variable,
-                base.variable,
-            )}>
-                <Providers>
-                    {/* <Navbar /> */}
-                    <Header />
-                    {children}
-                    <ClientProviders />
-                </Providers>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ColorSchemeScript />
+        <Head />
+        <link rel="preload" href="/images/me.png" as="image" />
+      </head>
+      <body
+        className={cn(
+          "min-h-screen bg-background text-foreground antialiased font-heading relative",
+          heading.variable,
+          base.variable
+        )}
+      >
+        <Providers>
+          {/* <Navbar /> */}
+          <Header />
+          {children}
+          <ClientProviders />
+        </Providers>
+      </body>
+    </html>
+  );
 }
