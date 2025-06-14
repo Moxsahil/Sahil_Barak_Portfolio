@@ -18,6 +18,7 @@ const Projects = () => {
     try {
       const fetchProjects = async () => {
         const data = await getProjects();
+        // console.log("Fetched Projects: ", data);
         setProjects(data);
       };
       fetchProjects();
@@ -60,7 +61,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 w-full">
           {data &&
-            data.slice(4, 8)?.map((project: ProjectProps, index) => (
+            data.slice(0, 4)?.map((project: ProjectProps, index) => (
               <AnimationContainer key={project.title} delay={0.2 * index + 0.1}>
                 <MagicCard
                   className="p-2"
