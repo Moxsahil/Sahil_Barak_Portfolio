@@ -1,13 +1,11 @@
 "use client";
 
-import sendMessage from "@/actions/send-message";
 import { cn } from "@/lib/utils";
-import { FormValidator, FormValues } from "@/lib/validators/form";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -22,44 +20,57 @@ import { Input } from "../ui/input";
 import SendButton from "../ui/send-button";
 import { Textarea } from "../ui/textarea";
 import AnimationContainer from "../utils/animation-container";
+import emailjs from "emailjs-com";
+
+const FormValidator = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Invalid email"),
+  phone: z.string().min(10, "Phone is required"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
+});
 
 const Contact = () => {
-  const form = useForm<FormValues>({
+  const form = useForm({
     resolver: zodResolver(FormValidator),
     mode: "onBlur",
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       message: "",
     },
   });
 
+  const formRef = useRef(null);
   const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { mutate: handleSubmit, isPending: isLoading } = useMutation({
-    mutationFn: async ({ name, email, phone, message }: FormValues) => {
-      const payload: FormValues = {
-        name,
-        email,
-        phone,
-        message,
-      };
+  const onSubmit = async () => {
+    if (!formRef.current) return;
+    setIsLoading(true);
 
-      const data = await sendMessage(payload);
-      return data;
-    },
-    onError: (error) => {
-      toast.error("Unable to send message, please try again.");
-    },
-    onSuccess: () => {
-      form.reset();
-      setTimeout(() => {
-        setIsSent(true);
-      }, 1000);
-      toast.success("Your message has been received!");
-    },
-  });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          toast.success("Your message has been received!");
+          form.reset();
+          setTimeout(() => setIsSent(true), 1000);
+        },
+        (error) => {
+          console.error(error);
+          toast.error("Unable to send message, please try again.");
+        }
+      )
+      .finally(() => setIsLoading(false));
+  };
 
   return (
     <div id="contact" className="w-full relative pt-10 pb-40 z-40">
@@ -80,7 +91,7 @@ const Contact = () => {
             <Button
               type="button"
               variant="outline"
-              className="flex-col items-start w-full h-auto p-5 hover:scale-100"
+              className="flex-col items-start w-full h-auto p-5"
             >
               <h6 className="text-base font-medium">📩 Email</h6>
               <p className="mt-2 text-base text-foreground/70">
@@ -92,7 +103,7 @@ const Contact = () => {
             <Button
               type="button"
               variant="outline"
-              className="flex-col items-start w-full h-auto p-5 hover:scale-100"
+              className="flex-col items-start w-full h-auto p-5"
             >
               <h6 className="text-base font-medium">📞 Phone</h6>
               <p className="mt-2 text-base text-foreground/70">
@@ -104,7 +115,8 @@ const Contact = () => {
 
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit((e) => handleSubmit(e))}
+            ref={formRef}
+            onSubmit={form.handleSubmit(onSubmit)}
             className="flex flex-col items-center justify-center w-full space-y-5"
           >
             <AnimationContainer
@@ -112,72 +124,73 @@ const Contact = () => {
               delay={0.2}
               className="w-full"
             >
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        disabled={isLoading}
-                        type="text"
-                        placeholder="Name"
-                        autoComplete="off"
-                        className="h-12 px-5 capitalize outline-none rounded-lg hover:border-blue-500"
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      <motion.span
-                        initial={{ opacity: 0, y: 0 }}
-                        animate={{ opacity: 1, y: 1 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {form.formState.errors.name &&
-                          form.formState.errors.name.message}
-                      </motion.span>
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
+              <div className="flex flex-col md:flex-row gap-4 w-full">
+                <FormField
+                  control={form.control}
+                  name="firstName"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormControl>
+                        <Input
+                          {...field}
+                          name="user_firstname"
+                          disabled={isLoading}
+                          placeholder="First Name"
+                          autoComplete="off"
+                        />
+                      </FormControl>
+                      <FormMessage>
+                        {form.formState.errors.firstName?.message}
+                      </FormMessage>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="lastName"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormControl>
+                        <Input
+                          {...field}
+                          name="user_lastname"
+                          disabled={isLoading}
+                          placeholder="Last Name"
+                          autoComplete="off"
+                        />
+                      </FormControl>
+                      <FormMessage>
+                        {form.formState.errors.lastName?.message}
+                      </FormMessage>
+                    </FormItem>
+                  )}
+                />
+              </div>
             </AnimationContainer>
+
             <AnimationContainer
               animation="slide-up"
               delay={0.3}
               className="w-full"
             >
-              <div className="flex flex-col items-center justify-center w-full gap-4 md:flex-row">
+              <div className="flex flex-col md:flex-row gap-4 w-full">
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem
-                      className={cn(
-                        "w-full mb-0",
-                        form.formState.errors.phone && "mb-5"
-                      )}
-                    >
+                    <FormItem className="w-full">
                       <FormControl>
                         <Input
                           {...field}
+                          name="user_email"
                           disabled={isLoading}
-                          required
                           type="email"
-                          name="email"
                           placeholder="Email"
                           autoComplete="off"
-                          className="h-12 px-5 outline-none rounded-lg hover:border-blue-500"
                         />
                       </FormControl>
                       <FormMessage>
-                        <motion.span
-                          initial={{ opacity: 0, y: 0 }}
-                          animate={{ opacity: 1, y: 1 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          {form.formState.errors.email &&
-                            form.formState.errors.email.message}
-                        </motion.span>
+                        {form.formState.errors.email?.message}
                       </FormMessage>
                     </FormItem>
                   )}
@@ -186,39 +199,26 @@ const Contact = () => {
                   control={form.control}
                   name="phone"
                   render={({ field }) => (
-                    <FormItem
-                      className={cn(
-                        "w-full mb-0",
-                        form.formState.errors.email && "mb-5"
-                      )}
-                    >
+                    <FormItem className="w-full">
                       <FormControl>
                         <Input
                           {...field}
+                          name="user_phone"
                           disabled={isLoading}
-                          required
                           type="tel"
-                          name="phone"
                           placeholder="Phone"
                           autoComplete="off"
-                          className="h-12 px-5 outline-none rounded-lg hover:border-blue-500"
                         />
                       </FormControl>
                       <FormMessage>
-                        <motion.span
-                          initial={{ opacity: 0, y: 0 }}
-                          animate={{ opacity: 1, y: 1 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          {form.formState.errors.phone &&
-                            form.formState.errors.phone.message}
-                        </motion.span>
+                        {form.formState.errors.phone?.message}
                       </FormMessage>
                     </FormItem>
                   )}
                 />
               </div>
             </AnimationContainer>
+
             <AnimationContainer
               animation="slide-up"
               delay={0.4}
@@ -232,29 +232,21 @@ const Contact = () => {
                     <FormControl>
                       <Textarea
                         {...field}
+                        name="user_message"
                         disabled={isLoading}
-                        required
                         rows={5}
-                        name="message"
                         placeholder="Message..."
                         autoComplete="off"
-                        className="w-full p-5 outline-none resize-none rounded-lg hover:border-blue-500"
                       />
                     </FormControl>
                     <FormMessage>
-                      <motion.span
-                        initial={{ opacity: 0, y: 0 }}
-                        animate={{ opacity: 1, y: 1 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {form.formState.errors.message &&
-                          form.formState.errors.message.message}
-                      </motion.span>
+                      {form.formState.errors.message?.message}
                     </FormMessage>
                   </FormItem>
                 )}
               />
             </AnimationContainer>
+
             <AnimationContainer
               animation="slide-up"
               delay={0.5}
