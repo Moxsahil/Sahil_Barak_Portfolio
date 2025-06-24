@@ -99,7 +99,10 @@ const Contact = () => {
               </p>
             </Button>
           </Link>
-          <Link href="" className="flex-[0.5] w-full lg:w-auto">
+          <Link
+            href="tel:+917404927198"
+            className="flex-[0.5] w-full lg:w-auto"
+          >
             <Button
               type="button"
               variant="outline"
@@ -252,13 +255,19 @@ const Contact = () => {
               delay={0.5}
               className="w-full"
             >
-              <div className="flex items-center justify-center w-full mx-auto">
+              <div className="flex flex-col items-center justify-center w-full mx-auto">
                 <SendButton
                   isSent={isSent}
                   isLoading={isLoading}
                   setIsSent={setIsSent}
                   disabled={form.formState.disabled}
                 />
+                <p className="text-sm text-muted-foreground text-center mt-16">
+                  Made with ❣️ by{" "}
+                  <span className="font-semibold text-foreground">
+                    Sahil Barak
+                  </span>
+                </p>
               </div>
             </AnimationContainer>
           </form>

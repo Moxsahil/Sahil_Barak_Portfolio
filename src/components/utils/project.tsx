@@ -50,8 +50,8 @@ const Project = ({ project }: Props) => {
               GitHub
             </Button>
           )}
-          {project.view ? (
-            <Link href={project.view} target="_blank">
+          {project.views ? (
+            <Link href={project.views} target="_blank">
               <Button variant="outline" size="sm">
                 <ExternalLinkIcon className="size-4 mr-2" />
                 View
