@@ -139,8 +139,8 @@ const Card = ({ project }: { project: ProjectProps }) => {
                     </Button>
                   </Link>
                 )}
-                {project.view && (
-                  <Link href={project.view} target="_blank">
+                {project.views && (
+                  <Link href={project.views} target="_blank">
                     <Button variant="outline" size="sm">
                       <ExternalLinkIcon className="w-5 h-5" />
                       <span className="ml-2">View</span>

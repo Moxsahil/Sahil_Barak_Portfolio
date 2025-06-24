@@ -85,7 +85,7 @@ const Contact = () => {
       <div className="flex flex-col items-center justify-center gap-5 pt-10 w-full">
         <div className="flex flex-col items-center justify-center w-full gap-5 lg:flex-row">
           <Link
-            href="mailto:sahilmk01@gmail.com"
+            href="mailto:sahilbarak18@gmail.com"
             className="flex-[0.5] w-full lg:w-auto"
           >
             <Button
@@ -95,11 +95,14 @@ const Contact = () => {
             >
               <h6 className="text-base font-medium">📩 Email</h6>
               <p className="mt-2 text-base text-foreground/70">
-                sahilmk01@gmail.com
+                sahilbarak18@gmail.com
               </p>
             </Button>
           </Link>
-          <Link href="" className="flex-[0.5] w-full lg:w-auto">
+          <Link
+            href="tel:+917404927198"
+            className="flex-[0.5] w-full lg:w-auto"
+          >
             <Button
               type="button"
               variant="outline"
@@ -252,13 +255,19 @@ const Contact = () => {
               delay={0.5}
               className="w-full"
             >
-              <div className="flex items-center justify-center w-full mx-auto">
+              <div className="flex flex-col items-center justify-center w-full mx-auto">
                 <SendButton
                   isSent={isSent}
                   isLoading={isLoading}
                   setIsSent={setIsSent}
                   disabled={form.formState.disabled}
                 />
+                <p className="text-sm text-muted-foreground text-center mt-16">
+                  Made with ❣️ by{" "}
+                  <span className="font-semibold text-foreground">
+                    Sahil Barak
+                  </span>
+                </p>
               </div>
             </AnimationContainer>
           </form>
