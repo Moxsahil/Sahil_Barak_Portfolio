@@ -1,9 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";

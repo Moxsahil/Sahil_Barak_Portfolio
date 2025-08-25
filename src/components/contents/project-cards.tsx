@@ -14,43 +14,103 @@ import { MagicCard } from "../ui/magic-card";
 
 const techStackIcons: { [key: string]: keyof typeof Icons } = {
   "next.js": "nextjs",
-  nextjs: "nextjs",
-  react: "react",
-  nodejs: "NODEJS",
-  node: "NODEJS",
-  express: "express",
-  drizzle: "drizzle",
+  "nextjs": "nextjs",
+  "next": "nextjs",
+  "react": "react",
+  "reactjs": "react",
+  "react.js": "react",
+  "nodejs": "NODEJS",
+  "node.js": "NODEJS", 
+  "node": "NODEJS",
+  "express": "express",
+  "expressjs": "express",
+  "drizzle": "drizzle",
+  "drizzle-orm": "drizzle",
   "tailwind css": "tailwindcss",
-  tailwindcss: "tailwindcss",
-  stripe: "stripe",
-  RazorpayIcon: "razorpay",
-
-  tailwind: "tailwindcss",
+  "tailwindcss": "tailwindcss",
+  "tailwind": "tailwindcss",
+  "stripe": "stripe",
+  "razorpay": "razorpay",
+  "razorpayicon": "razorpay",
   "framer motion": "framer",
   "framer-motion": "framer",
+  "framer": "framer",
   "shadcn/ui": "shadcn",
   "shadcn ui": "shadcn",
-  shadcnui: "shadcn",
-  mongodb: "mongodb",
-  prisma: "prisma",
+  "shadcn": "shadcn",
+  "shadcnui": "shadcn",
+  "mongodb": "mongodb",
+  "mongo": "mongodb",
+  "prisma": "prisma",
   "magic ui": "magicui",
-  expo: "expo",
-  firebase: "firebase",
-  figma: "figma",
-  clerk: "clerk",
+  "magicui": "magicui",
+  "expo": "expo",
+  "firebase": "firebase",
+  "figma": "figma",
+  "clerk": "clerk",
+  "clerkjs": "clerk",
   "react native": "react",
+  "react-native": "react",
+  "aws": "aws",
   "aws(ses)": "aws",
-  zustand: "zustand",
-  gemini: "gemini",
+  "zustand": "zustand",
+  "gemini": "gemini",
+  "hono": "hono",
+  "convex": "convex",
+  "nextauth": "nextauth",
+  "next-auth": "nextauth",
+  "hygraph": "hygraph",
+  "react-query": "reactQuery",
+  "reactquery": "reactQuery",
+  "typescript": "typescript",
+  "ts": "typescript",
+  "css": "css",
+  "css3": "css",
+  "html": "html",
+  "html5": "html",
+  "graphql": "graphql",
+  "graph-ql": "graphql",
+  "docker": "docker",
+  "nodemailer": "nodemailer",
+  "node-mailer": "nodemailer",
+  "zod": "zod",
+  "postgresql": "postgresql",
+  "postgres": "postgresql",
+  "pg": "postgresql",
+  "cloudinary": "cloudinary",
+  "react-hook-form": "reactHookForm",
+  "react hook form": "reactHookForm",
+  "reacthookform": "reactHookForm",
+  "rhf": "reactHookForm",
+  "prisma orm": "prismaorm",
+  "prisma-orm": "prismaorm",
+  "prismaorm": "prismaorm",
+  "headless ui": "headlessui",
+  "headless-ui": "headlessui",
+  "headlessui": "headlessui",
+  "@headlessui": "headlessui",
+  "jwt": "jwt",
+  "json web token": "jwt",
+  "jsonwebtoken": "jwt",
+  "json-web-token": "jwt",
 };
 
 const getIconForTech = (tech: string) => {
-  const normalizedTech = tech.toLowerCase();
+  const normalizedTech = tech.toLowerCase().trim();
   const iconKey = techStackIcons[normalizedTech];
-  if (iconKey && Icons[iconKey]) {
-    const Icon = Icons[iconKey];
+  
+  if (iconKey && Icons[iconKey as keyof typeof Icons]) {
+    const Icon = Icons[iconKey as keyof typeof Icons];
     return <Icon className="size-3 mr-1" />;
   }
+  
+  // Fallback: try direct icon name lookup
+  const directIconKey = normalizedTech as keyof typeof Icons;
+  if (Icons[directIconKey]) {
+    const Icon = Icons[directIconKey];
+    return <Icon className="size-3 mr-1" />;
+  }
+  
   return null;
 };
 

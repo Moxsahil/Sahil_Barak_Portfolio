@@ -2337,6 +2337,386 @@ const Icons = {
       />
     </svg>
   ),
+  typescript: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#3178C6" />
+      <path
+        d="M19.5 23.5v-2.1c.6.3 1.2.5 1.9.5.7 0 1.1-.3 1.1-.8 0-.5-.4-.7-1.3-1.1l-.4-.2c-1.2-.5-2-1.1-2-2.4 0-1.2.9-2.1 2.3-2.1.8 0 1.5.2 2 .5v2.1c-.5-.3-1-.4-1.6-.4-.7 0-1 .3-1 .7 0 .5.4.7 1.4 1.1l.4.2c1.3.5 2 1.2 2 2.4 0 1.4-1.1 2.2-2.6 2.2-.8 0-1.6-.2-2.1-.5zM10.5 14.5h7v1.7h-2.6v7.3h-1.9v-7.3H10.5v-1.7z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  css: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#1572B6" />
+      <path
+        d="M8 8v16l8 4 8-4V8H8zm13.5 12.5l-.5 2-3 1.5-3-1.5-.5-2H16v2l1.5.75L19 22.5v-1.5h1.5v-.5z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  html: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#E34F26" />
+      <path
+        d="M8 8l1.5 17L16 28l6.5-3L24 8H8zm12 6h-8l.25 2.5h7.5L19.25 20l-3.25 1-3.25-1-.25-2.5h2.5l.125 1.25L16 19l1.25-.25.125-1.25h-2.75L14 15h6l-.5-1z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  graphql: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#E10098" />
+      <path
+        d="M16 6l6.928 4v8L16 26l-6.928-8V10L16 6zm0 2.31L10.5 11v6l5.5 7.69L21.5 17v-6L16 8.31zm0 2.69a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-5 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm10 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-7.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm5 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  docker: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#2496ED" />
+      <path
+        d="M6 16h2v2H6v-2zm3-3h2v2H9v-2zm0 3h2v2H9v-2zm3-6h2v2h-2v-2zm0 3h2v2h-2v-2zm0 3h2v2h-2v-2zm3-6h2v2h-2v-2zm0 3h2v2h-2v-2zm0 3h2v2h-2v-2zm3-3h2v2h-2v-2zm0 3h2v2h-2v-2zm5-1c-.5 0-.9.2-1.2.5-.3-.8-1.1-1.5-2.1-1.5h-.2c-.1-1.1-.5-2.1-1.2-2.9l-.4-.3-.3.4c-.6.8-.7 2.1-.1 3 .2.3.5.6.8.7-.3.2-.8.3-1.3.3H6c-.3 1.6 0 3.3.9 4.7.8 1.3 2.1 2.1 3.6 2.1 4.3 0 7.5-2 9-6.3 1.2.1 1.9-.1 2.5-.5.4-.3.7-.7.8-1.2l.1-.5-.4-.2c-.4-.2-1-.3-1.5-.1z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  nodemailer: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#22C55E" />
+      <path
+        d="M8 10v12l8 4 8-4V10l-8-4-8 4zm8-2l6 3-6 3-6-3 6-3zm-6 5l6 3v6l-6-3v-6zm8 0v6l6 3v-6l-6-3z"
+        fill="#fff"
+      />
+      <path
+        d="M14 16h4v1h-4v-1zm0 2h4v1h-4v-1z"
+        fill="#22C55E"
+      />
+    </svg>
+  ),
+  zod: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#3E67B1" />
+      <path
+        d="M8 8h16l-4 8 4 8H8l4-8-4-8zm2.5 2l2.5 5-2.5 5h11l-2.5-5 2.5-5h-11z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  postgresql: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#336791" />
+      <path
+        d="M8 12c0-2 2-4 5-4s5 2 5 4v8c0 1 .5 2 1.5 2s1.5-1 1.5-2v-8c0-2 1-4 3-4s2 2 2 4v10c0 2-1 4-3 4-1 0-2-.5-2.5-1.5-.5 1-1.5 1.5-2.5 1.5-2 0-4-2-4-4v-2c0-1-.5-2-1.5-2S11 19 11 20v2c0 2-1.5 4-3 4V12z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  cloudinary: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#3448C5" />
+      <path
+        d="M12 8c-2 0-4 2-4 4 0 1 .5 2 1 2.5C8.5 15 8 15.5 8 16.5c0 1.5 1.5 3 3 3h8c2 0 4-2 4-4s-2-4-4-4c0-2-2-3.5-4-3.5-1 0-2 .5-3 1zm7 3c1.5 0 2.5 1 2.5 2.5S20.5 16 19 16h-8c-.5 0-1-.5-1-1s.5-1 1-1c.5 0 1-.5 1-1 0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5c0 .5.5 1 1 1z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  reactHookForm: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#EC5990" />
+      <path
+        d="M16 6c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S21.5 6 16 6zm0 2c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z"
+        fill="#fff"
+      />
+      <path
+        d="M13 12h6v2h-2v6h-2v-6h-2v-2zm3 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  headlessui: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#66F" />
+      <path
+        d="M8 8h16v4H8V8zm0 6h16v4H8v-4zm0 6h16v4H8v-4z"
+        fill="#fff"
+        opacity="0.7"
+      />
+      <path
+        d="M10 10h2v12h-2V10zm4 0h2v12h-2V10zm4 0h2v12h-2V10zm4 0h2v12h-2V10z"
+        fill="#66F"
+      />
+    </svg>
+  ),
+  jwt: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#000" />
+      <path
+        d="M16 4l8 4.5v9L16 22l-8-4.5v-9L16 4z"
+        fill="#fff"
+      />
+      <path
+        d="M16 7l5 2.8v5.4L16 18l-5-2.8V9.8L16 7z"
+        fill="#FF0080"
+      />
+      <circle
+        cx="16"
+        cy="13"
+        r="2"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  prismaorm: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#2D3748" />
+      <path
+        d="M16 4l8 12-2 8-6-2-6 2-2-8 8-12z"
+        fill="#fff"
+      />
+      <path
+        d="M16 8l4 6-1 4-3-1-3 1-1-4 4-6z"
+        fill="#5A67D8"
+      />
+      <circle
+        cx="16"
+        cy="16"
+        r="1.5"
+        fill="#2D3748"
+      />
+    </svg>
+  ),
+  java: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#ED8B00" />
+      <path
+        d="M12 20c0 2 2 3 4 3s4-1 4-3c0-1-1-2-2-2h-4c-1 0-2 1-2 2zm8-8c0-2-2-4-4-4s-4 2-4 4v4h8v-4zm-4-2c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"
+        fill="#fff"
+      />
+      <path
+        d="M14 8h4v2h-4V8zm-2 4h8v2h-8v-2zm0 4h8v2h-8v-2z"
+        fill="#ED8B00"
+      />
+    </svg>
+  ),
+  mysql: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#00758F" />
+      <path
+        d="M8 12v8c0 2 2 4 4 4h8c2 0 4-2 4-4v-8c0-2-2-4-4-4h-8c-2 0-4 2-4 4z"
+        fill="#fff"
+      />
+      <path
+        d="M12 10h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h4v2h-4v-2z"
+        fill="#00758F"
+      />
+      <circle cx="22" cy="22" r="2" fill="#F29111" />
+    </svg>
+  ),
+  javascript: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#F7DF1E" />
+      <path
+        d="M20.5 23c-.8 0-1.3-.4-1.6-.9l-1.5.9c.6 1.1 1.7 1.8 3.1 1.8 1.6 0 2.7-.8 2.7-2.1 0-1.2-.7-1.8-2.1-2.3l-.7-.3c-.7-.3-1-.5-1-.9 0-.3.2-.5.6-.5.3 0 .6.1.8.5l1.4-.9c-.5-.9-1.3-1.2-2.2-1.2-1.4 0-2.3.9-2.3 2.1 0 1.2.7 1.8 1.8 2.2l.7.3c.7.3 1.1.5 1.1 1 0 .4-.3.6-.8.6zm-6.5 0c-.6 0-1-.3-1.2-.8l-1.5.9c.4.8 1.2 1.7 2.7 1.7 1.4 0 2.3-.7 2.3-2.1V17h-1.8v5.8c0 .6-.3.9-.7.9s-.8-.3-.8-.9V17H12.5v6.8c0 1.4.9 2.1 2.3 2.1z"
+        fill="#000"
+      />
+    </svg>
+  ),
+  vite: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#646CFF" />
+      <path
+        d="M6 16l10-8 10 8-10 8-10-8z"
+        fill="#FFD62E"
+      />
+      <path
+        d="M10 16l6-4 6 4-6 4-6-4z"
+        fill="#646CFF"
+      />
+      <circle
+        cx="16"
+        cy="16"
+        r="2"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  postman: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#FF6C37" />
+      <path
+        d="M16 6a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16z"
+        fill="#fff"
+      />
+      <path
+        d="M12 12h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h6v2h-6v-2z"
+        fill="#FF6C37"
+      />
+      <circle
+        cx="21"
+        cy="13"
+        r="2"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  vercel: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#000" />
+      <path
+        d="M16 6l10 20H6L16 6z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  cursor: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#000" />
+      <path
+        d="M8 8l16 6-6 2-2 6L8 8z"
+        fill="#fff"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="1"
+        fill="#000"
+      />
+    </svg>
+  ),
+  redux: (props: LucideProps) => (
+    <svg
+      {...props}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="32" height="32" rx="6" fill="#764ABC" />
+      <path
+        d="M16 6a10 10 0 1 0 0 20c2.8 0 5.4-1.2 7.2-3.2l-1.4-1.4A7.9 7.9 0 0 1 16 24a8 8 0 1 1 0-16c2.2 0 4.2.9 5.7 2.4l1.4-1.4A10 10 0 0 0 16 6z"
+        fill="#fff"
+      />
+      <circle
+        cx="16"
+        cy="12"
+        r="2"
+        fill="#764ABC"
+      />
+      <circle
+        cx="12"
+        cy="18"
+        r="2"
+        fill="#764ABC"
+      />
+      <circle
+        cx="20"
+        cy="18"
+        r="2"
+        fill="#764ABC"
+      />
+    </svg>
+  ),
 };
 
 export default Icons;
